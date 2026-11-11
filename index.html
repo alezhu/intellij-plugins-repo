@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntelliJ Custom Plugins Repository</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --code-bg: #090d16;
+      --badge-bg: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    .repo-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+    .repo-box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .url-container {
+      display: flex;
+      gap: 10px;
+      background: var(--code-bg);
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      align-items: center;
+    }
+    .url-text {
+      flex-grow: 1;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--accent);
+      font-size: 0.95rem;
+      word-break: break-all;
+    }
+    .copy-btn {
+      background: var(--accent);
+      color: #0f172a;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--accent-hover);
+    }
+    .instructions {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .instructions ol {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+    .instructions li {
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .cards-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .card-header h3 {
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+    .plugin-id {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+    .badges {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .badge.version {
+      background: #0284c7;
+      color: white;
+    }
+    .badge.vendor {
+      background: var(--badge-bg);
+      color: var(--text-muted);
+    }
+    .badge.compat {
+      background: #334155;
+      color: #94a3b8;
+    }
+    .desc {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .desc p { margin-bottom: 8px; }
+    .desc a { color: var(--accent); }
+    .desc ul { margin-left: 20px; margin-bottom: 8px; }
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .download-btn {
+      background: #334155;
+      color: var(--text);
+    }
+    .download-btn:hover {
+      background: #475569;
+    }
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Custom IntelliJ Plugins Repository</h1>
+      <p class="subtitle">Independent update channel for IntelliJ Platform IDEs</p>
+    </header>
+
+    <div class="repo-box">
+      <h2>рџ”Њ Repository URL for IntelliJ IDEA</h2>
+      <div class="url-container">
+        <span class="url-text" id="repo-url">https://alezhu.github.io/intellij-plugins-repo/updatePlugins.xml</span>
+        <button class="copy-btn" onclick="copyUrl()">Copy URL</button>
+      </div>
+      <div class="instructions">
+        <strong>How to use in your IDE:</strong>
+        <ol>
+          <li>Open <b>Settings / Preferences</b> (<code>Ctrl + Alt + S</code> or <code>Cmd + ,</code>) &rarr; <b>Plugins</b>.</li>
+          <li>Click the gear icon вљ™пёЏ &rarr; <b>Manage Plugin Repositories...</b>.</li>
+          <li>Click <b>+</b> and paste the URL above.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2 class="section-title">рџ“¦ Available Plugins (2)</h2>
+    <div class="cards-grid">
+          <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>Alezhu ClassicUI</h3>
+          <span class="plugin-id">ru.alezhu.idea.classic.ui</span>
+        </div>
+        <span class="badge version">v1.0.1</span>
+      </div>
+      <div class="badges">
+        <span class='badge vendor'>Alezhu</span>
+        <span class='badge compat'>since 232, until 299.*</span>
+      </div>
+      <div class="desc"><p>Based on original <a href="https://plugins.jetbrains.com/plugin/24468-classic-ui">JetBrains ClassicUI Plugin</a>.</p>
+
+<p><strong>In difference from original plugin this one has no limits to version.</strong></p>
+
+<p>Provides the classic JetBrains IDE look and feel, which was used before the introduction of <a href="https://www.jetbrains.com/idea/new-ui">New UI</a>.
+Includes UI layout, 3 tool window stripes and icons for IDEs and plugins.
+If you prefer the old-school layout and visual style, this plugin brings back that familiar look and feel.</p></div>
+      <div class="card-footer">
+        <a href="https://alezhu.github.io/intellij-plugins-repo/plugins/alezhu-idea-classic-ui-1.0.1.zip" class="btn download-btn">Download .zip (alezhu-idea-classic-ui-1.0.1.zip)</a>
+      </div>
+    </div>    <div class="card">
+      <div class="card-header">
+        <div>
+          <h3>GitExtensions</h3>
+          <span class="plugin-id">com.dmitryzhelnin.intellij.plugin.gitextensions</span>
+        </div>
+        <span class="badge version">v0.4.8-az</span>
+      </div>
+      <div class="badges">
+        <span class='badge vendor'>Dmitry Zhelnin</span>
+        <span class='badge compat'>since 233</span>
+      </div>
+      <div class="desc">Adds ability to work with <a href="https://github.com/gitextensions/gitextensions">GitExtensions</a> application from IDEs based on the IntelliJ platform</div>
+      <div class="card-footer">
+        <a href="https://alezhu.github.io/intellij-plugins-repo/plugins/git-extensions-plugin-0.4.8-az.zip" class="btn download-btn">Download .zip (git-extensions-plugin-0.4.8-az.zip)</a>
+      </div>
+    </div>
+    </div>
+
+    <footer>
+      Powered by <a href="https://github.com/alezhu/intellij-plugins-repo" target="_blank">intellij-plugins-repo</a> & GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    function copyUrl() {
+      const text = document.getElementById('repo-url').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerText = 'Copied!';
+        setTimeout(() => { btn.innerText = 'Copy URL'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
