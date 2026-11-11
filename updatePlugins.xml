@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+  <plugin id="ru.alezhu.idea.classic.ui" url="https://alezhu.github.io/intellij-plugins-repo/plugins/alezhu-idea-classic-ui-1.0.1.zip" version="1.0.1">
+    <name>Alezhu ClassicUI</name>
+    <description><![CDATA[<p>Based on original <a href="https://plugins.jetbrains.com/plugin/24468-classic-ui">JetBrains ClassicUI Plugin</a>.</p>
+
+<p><strong>In difference from original plugin this one has no limits to version.</strong></p>
+
+<p>Provides the classic JetBrains IDE look and feel, which was used before the introduction of <a href="https://www.jetbrains.com/idea/new-ui">New UI</a>.
+Includes UI layout, 3 tool window stripes and icons for IDEs and plugins.
+If you prefer the old-school layout and visual style, this plugin brings back that familiar look and feel.</p>]]></description>
+    <change-notes><![CDATA[<h2><a href="https://github.com/alezhu/classic-ui/compare/1.0.0...1.0.1">1.0.1</a> - 2026-05-17</h2>
+
+<h3>Changed</h3>
+
+<ul><li>Adapt plugin to modern version of IntelliJ Platform</li></ul>
+
+
+
+<h2><a href="https://github.com/alezhu/classic-ui/commits/1.0.0">1.0.0</a></h2>
+
+<h3>Added</h3>
+
+<ul><li>Add classic UI support for all IDE versions from 232 to 299 </li><li>Initial scaffold created from <a href="https://github.com/JetBrains/intellij-platform-plugin-template">IntelliJ Platform Plugin Template</a></li></ul>]]></change-notes>
+    <idea-version since-build="232" until-build="299.*" />
+    <vendor url="https://github.com/alezhu/classic-ui">Alezhu</vendor>
+  </plugin>
+  <plugin id="com.dmitryzhelnin.intellij.plugin.gitextensions" url="https://alezhu.github.io/intellij-plugins-repo/plugins/git-extensions-plugin-0.4.8-az.zip" version="0.4.8-az">
+    <name>GitExtensions</name>
+    <description><![CDATA[Adds ability to work with <a href="https://github.com/gitextensions/gitextensions">GitExtensions</a> application from IDEs based on the IntelliJ platform]]></description>
+    <change-notes><![CDATA[<p>
+        <ul>
+            <li>0.4.7</li>
+            <ul>
+                <li>Fix minimum supported version of IntelliJ platform is 233.0 (2023.3)
+                <li>Adapt to AndroidStudio 2025.3.4.7
+            </ul>
+            <li>0.4.6</li>
+            <ul>
+                <li>Adapt to IntelliJ platform 262.* (2026.2.*)
+                <li>Fix usages of deprecated API
+                <li>Minimum supported version of IntelliJ platform is 233.0 (2023.3)
+            </ul>
+          <li>0.4.5</li>
+          <ul>
+            <li>Fix usages of deprecated API</li>
+            <li>Minimum supported version of IntelliJ platform is 223.0 (2022.3)</li>
+          </ul>
+          <li>0.4.4</li>
+          <ul>
+            <li>Fix usages of deprecated API</li>
+          </ul>
+          <li>0.4.3</li>
+          <ul>
+            <li>Fix usages of deprecated API</li>
+          </ul>
+          <li>0.4.2</li>
+          <ul>
+            <li>Fix usages of deprecated API</li>
+            <li>Minimum supported version of IntelliJ platform is 193.0</li>
+          </ul>
+          <li>0.4.1</li>
+          <ul>
+            <li>Update supported versions of IntelliJ platform</li>
+          </ul>
+          <li>0.4.0</li>
+          <ul>
+            <li>Display branch name on the Commit button for the file opened in the editor or item selected in the project view</li>
+            <li>Added "Display current branch name on the Commit button" settings item</li>
+            <li>Added "Maximum branch name length" settings item</li>
+          </ul>
+          <li>0.3.1</li>
+          <ul>
+            <li>Minor UI fix</li>
+          </ul>
+          <li>0.3.0</li>
+          <ul>
+            <li>Added support for portable version of GitExtensions. <br>You can set the executable file path in the IDE settings menu</li>
+          </ul>
+          <li>0.2.2</li>
+          <ul>
+            <li>Added dark theme icons</li>
+          </ul>
+          <li>0.2.1</li>
+          <ul>
+            <li>Added GitExtensions ToolBar to MainToolBar and NavigationToolBar</li>
+          </ul>
+          <li>0.2.0</li>
+          <ul>
+            <li>Support for any installation path of GitExtensions</li>
+          </ul>
+          <li>0.1.0</li>
+          <ul>
+            <li>Support for commands via IDE main menu and editor/project window context menu</li>
+            <li>Only default installation path (C:\Program Files (x86)\GitExtensions\GitExtensions.exe) is supported</li>
+          </ul>
+        </ul>
+      </p>]]></change-notes>
+    <idea-version since-build="233" />
+    <vendor url="https://github.com/DmitryZhelnin/git-extensions-intellij">Dmitry Zhelnin</vendor>
+  </plugin>
+</plugins>

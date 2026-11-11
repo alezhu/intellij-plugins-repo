@@ -1,0 +1,6 @@
+# Build outputs
+site/
+
+# OS metadata
+.DS_Store
+Thumbs.db
